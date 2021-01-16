@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "deepl-api"
+version = "0.1.0"
+description = ""
+authors = ["Martin Gruner <mg.pub@gmx.net>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+requests = "^2.25.1"
+click = "^7.1.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^4.6"
+pdoc3 = "^0.9.2"
+black = "^20.8b1"
+
+[tool.poetry.scripts]
+deepl = 'deepl_api.cli:run'
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
