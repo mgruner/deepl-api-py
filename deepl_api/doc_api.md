@@ -1,4 +1,4 @@
-# Requirements
+## Requirements
 
 You need to have a valid [DeepL Pro Developer](https://www.deepl.com/pro#developer) account
 with an associated API key. This key must be made available to the application, e. g. via
@@ -8,7 +8,7 @@ environment variable:
 export DEEPL_API_KEY=YOUR_KEY
 ```
 
-# Example
+## Example
 
 ```python
 import os
@@ -31,6 +31,6 @@ def test_documentation():
 
 ```
 
-# See Also
+## See Also
 
 The main API functions are documented in the `deepl_api.DeepL` class.
