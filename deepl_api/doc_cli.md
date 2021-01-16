@@ -40,7 +40,7 @@ shell> echo "Please go home." | deepl translate --source-language EN --target-la
 Bitte gehen Sie nach Hause.
 ```
 
-By providing the options `--input-filepath` and / or `--output-filepath`, you can tell `deepl` to
+By providing the options `--input-file` and / or `--output-file`, you can tell `deepl` to
 read from / write to files, rather than `STDIN` / `STDOUT`.
 
 ### Retrieving Account Usage & Limits

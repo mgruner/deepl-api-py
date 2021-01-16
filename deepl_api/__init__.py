@@ -160,7 +160,7 @@ class DeepL:
         texts: list,
     ) -> list:
         """
-        Translate one or more [text chunks](TranslatableTextList) at once. You can pass in optional
+        Translate one or more text chunks at once. You can pass in optional
         translation options if you need non-default behaviour.
 
         Please see the parameter documentation and the

@@ -61,16 +61,16 @@ def languages():
 @run.command()
 @click.option("-s", "--source-language", required=False)
 @click.option("-t", "--target-language", required=True)
-@click.option("-i", "--input-filepath", required=False)
-@click.option("-o", "--output-filepath", required=False)
+@click.option("-i", "--input-file", required=False)
+@click.option("-o", "--output-file", required=False)
 @click.option("-p", "--preserve-formatting", default=None, is_flag=True)
 @click.option("-m", "--formality-more", default=None, is_flag=True)
 @click.option("-l", "--formality-less", default=None, is_flag=True)
 def translate(
     source_language,
     target_language,
-    input_filepath,
-    output_filepath,
+    input_file,
+    output_file,
     preserve_formatting,
     formality_more,
     formality_less,
@@ -78,8 +78,8 @@ def translate(
     try:
         deepl = _get_instance()
 
-        if input_filepath != None:
-            text = pathlib.Path(input_filepath).read_text()
+        if input_file != None:
+            text = pathlib.Path(input_file).read_text()
         else:
             text = sys.stdin.read()
 
@@ -99,8 +99,8 @@ def translate(
 
         translated_text = "\n".join([entry["text"] for entry in translations])
 
-        if output_filepath != None:
-            pathlib.Path(output_filepath).write_text(translated_text)
+        if output_file != None:
+            pathlib.Path(output_file).write_text(translated_text)
         else:
             print(translated_text)
 
