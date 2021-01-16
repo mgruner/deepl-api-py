@@ -5,7 +5,7 @@ This repository contains a [Python](https://www.python.org/) implementation of t
 ## Contents
 
 - A [Python package](https://mgruner.github.io/deepl-api-py-docs/deepl_api/index.html) for easy integration into Python applications.
-- The `deepl` [unix-style commandline application](https://mgruner.github.io/deepl-api-py-docs/deepl-api/cli.html) for integration into existing toolchains without any programming effort.
+- The `deepl` [unix-style commandline application](https://mgruner.github.io/deepl-api-py-docs/deepl_api/cli.html) for integration into existing toolchains without any programming effort.
 - Unit and integration tests.
 
 Please refer to the linked documentation for instructions on how to get started with the API and/or the CLI tool.
