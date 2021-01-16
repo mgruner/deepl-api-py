@@ -14,7 +14,7 @@ export DEEPL_API_KEY=YOUR_KEY
 
 To get an overview of the available commands, just invoke the program.
 
-```
+```text
 shell> deepl
 Usage: deepl [OPTIONS] COMMAND [ARGS]...
 
@@ -35,7 +35,7 @@ You can call `deepl translate --help` to get a detailed reference for the variou
 By default, `deepl` reads from `STDIN` and writes to `STDOUT`, which means that you can integrate
 it nicely into toolchains.
 
-```
+```text
 shell> echo "Please go home." | deepl translate --source-language EN --target-language DE | cat -
 Bitte gehen Sie nach Hause.
 ```
@@ -45,7 +45,7 @@ read from / write to files, rather than `STDIN` / `STDOUT`.
 
 ### Retrieving Account Usage & Limits
 
-```
+```text
 shell> deepl usage-information
 Available characters per billing period: 250000
 Characters already translated in the current billing period: 3317
@@ -53,7 +53,7 @@ Characters already translated in the current billing period: 3317
 
 ### Retrieving Available Languages
 
-```
+```text
 shell> deepl languages
 DeepL can translate from the following source languages:
   DE    (German)
