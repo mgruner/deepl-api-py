@@ -75,14 +75,18 @@ class DeepL:
     """
 
     _api_key: str
+    _api_base_url = "https://api.deepl.com/v2"
 
     def __init__(self, api_key: str):
         self._api_key = api_key
 
     # Private method that performs the HTTP calls.
-    def _api_call(self, url: str, payload: dict):
-        payload["auth_key"] = self._api_key
-        with requests.post(url, payload) as response:
+    def _api_call(self, url: str, payload: dict = {}):
+
+        # Create a new dict to avoid modifying the passed one.
+        post_data = {**payload, 'auth_key': self._api_key}
+
+        with requests.post(self._api_base_url + url, post_data) as response:
             if response.status_code in (
                 requests.codes["unauthorized"],
                 requests.codes["forbidden"],
@@ -91,6 +95,8 @@ class DeepL:
                     "Authorization failed, is your API key correct?"
                 )
 
+            # DeepL sends back error messages in the response body.
+            #   Try to fetch them to construct more helpful exceptions.
             if not response.ok:
                 try:
                     data = response.json()
@@ -98,9 +104,12 @@ class DeepL:
                         raise DeeplServerError(
                             f"An error occurred while communicating with the DeepL server: '{data['message']}'."
                         )
+                # In case the message could not be decoded, just go on to raise
+                #   a built-in "requests" exception.
                 except (ValueError):
                     pass
 
+            # Use the default error handling of "requests".
             response.raise_for_status()
             return response.json()
 
@@ -112,7 +121,7 @@ class DeepL:
         See also the [vendor documentation](https://www.deepl.com/docs-api/other-functions/monitoring-usage/).
         """
 
-        data = self._api_call("https://api.deepl.com/v2/usage", {})
+        data = self._api_call("/usage")
 
         if not "character_count" in (data):
             raise DeeplDeserializationError()
@@ -124,7 +133,7 @@ class DeepL:
 
     # Private method to make the API calls for the language lists.
     def _languages(self, ltype: str):
-        data = self._api_call("https://api.deepl.com/v2/languages", {"type": ltype})
+        data = self._api_call("/languages", {"type": ltype})
 
         if not "language" in (data[0]):
             raise DeeplDeserializationError()
@@ -195,7 +204,7 @@ class DeepL:
         if formality != None:
             payload["formality"] = formality.value
 
-        data = self._api_call("https://api.deepl.com/v2/translate", payload)
+        data = self._api_call("/translate", payload)
 
         if not "translations" in (data):
             raise DeeplDeserializationError

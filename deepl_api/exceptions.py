@@ -1,5 +1,6 @@
 """DeepL API exception classes."""
 
+
 class DeeplBaseError(Exception):
     """Base class for exceptions in this module."""
 
