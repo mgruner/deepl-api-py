@@ -1,4 +1,4 @@
-# deepl-api-rs
+# deepl-api-py
 
 This repository contains a [Python](https://www.python.org/) implementation of the [DeepL REST API](https://www.deepl.com/docs-api/).
 
