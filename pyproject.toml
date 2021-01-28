@@ -1,9 +1,9 @@
 [tool.poetry]
 name          = "deepl-api"
-version       = "0.2.0"
+version       = "0.2.1"
 description   = "Bindings and a commandline tools for the DeepL REST API (https://www.deepl.com/docs-api/)"
 authors       = ["Martin Gruner <mg.pub@gmx.net>"]
-license       = "MIT OR Apache-2.0"
+license       = "MIT"
 readme        = "README.md"
 repository    = "https://github.com/mgruner/deepl-api-py/"
 documentation = "https://mgruner.github.io/deepl-api-py-docs/deepl_api/index.html"
