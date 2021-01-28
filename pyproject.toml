@@ -1,22 +1,27 @@
 [tool.poetry]
-name = "deepl-api"
-version = "0.1.0"
-description = ""
-authors = ["Martin Gruner <mg.pub@gmx.net>"]
+name          = "deepl-api"
+version       = "0.2.0"
+description   = "Bindings and a commandline tools for the DeepL REST API (https://www.deepl.com/docs-api/)"
+authors       = ["Martin Gruner <mg.pub@gmx.net>"]
+license       = "MIT OR Apache-2.0"
+readme        = "README.md"
+repository    = "https://github.com/mgruner/deepl-api-py/"
+documentation = "https://mgruner.github.io/deepl-api-py-docs/deepl_api/index.html"
+keywords      = ["deepl", "api", "translation", "ai", "machine-learning"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python   = "^3.7"
 requests = "^2.25.1"
-click = "^7.1.2"
+click    = "^7.1.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^4.6"
-pdoc3 = "^0.9.2"
-black = "^20.8b1"
+pdoc3  = "^0.9.2"
+black  = "^20.8b1"
 
 [tool.poetry.scripts]
-deepl = 'deepl_api.cli:run'
+deepl  = 'deepl_api.cli:run'
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires      = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
