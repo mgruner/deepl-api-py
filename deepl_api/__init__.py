@@ -49,10 +49,10 @@ class Formality(Enum):
     """Translation option that controls the desired translation formality."""
 
     LESS = "less"
-    """Default formality."""
+    """Translate less formally."""
 
     DEFAULT = "default"
-    """Translate less formally."""
+    """Default formality."""
 
     MORE = "more"
     """Translate more formally."""
