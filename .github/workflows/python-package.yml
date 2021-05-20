@@ -39,4 +39,4 @@ jobs:
       env:
         DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
       run: |
-        pytest
+        python -m pytest
