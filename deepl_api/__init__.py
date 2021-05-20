@@ -79,13 +79,17 @@ class DeepL:
 
     def __init__(self, api_key: str):
         self._api_key = api_key
-        self._api_base_url = "https://api-free.deepl.com/v2" if api_key.endswith(":fx") else "https://api.deepl.com/v2";
+        self._api_base_url = (
+            "https://api-free.deepl.com/v2"
+            if api_key.endswith(":fx")
+            else "https://api.deepl.com/v2"
+        )
 
     # Private method that performs the HTTP calls.
     def _api_call(self, url: str, payload: dict = {}):
 
         # Create a new dict to avoid modifying the passed one.
-        post_data = {**payload, 'auth_key': self._api_key}
+        post_data = {**payload, "auth_key": self._api_key}
 
         with requests.post(self._api_base_url + url, post_data) as response:
             if response.status_code in (
