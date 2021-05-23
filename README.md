@@ -20,3 +20,7 @@ Please refer to the linked documentation for instructions on how to get started 
 
 - Support for the [(beta) document translation endpoint](https://www.deepl.com/docs-api/translating-documents/).
 - Support for the [XML handling flags](https://www.deepl.com/docs-api/translating-text/) in the translation endpoint.
+
+## See Also
+
+There are comparable implementations for [Rust](https://github.com/mgruner/deepl-api-rs) and [Ruby](https://github.com/mgruner/deepl-api-rb).

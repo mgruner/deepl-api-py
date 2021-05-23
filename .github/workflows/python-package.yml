@@ -3,11 +3,7 @@
 
 name: Python package
 
-on:
-  push:
-    branches: [ next ]
-  pull_request:
-    branches: [ next ]
+on: [push, pull_request]
 
 jobs:
   build:
