@@ -25,3 +25,6 @@ deepl  = 'deepl_api.cli:run'
 [build-system]
 requires      = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+# Rebuild docs
+# pdoc3 --html -o doc deepl_api -f
