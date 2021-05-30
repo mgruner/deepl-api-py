@@ -19,7 +19,7 @@ Please refer to the linked documentation for instructions on how to get started 
 ## Not Implemented
 
 - Support for the [(beta) document translation endpoint](https://www.deepl.com/docs-api/translating-documents/).
-- Support for the [XML handling flags](https://www.deepl.com/docs-api/translating-text/) in the translation endpoint.
+- Support for advanced parameters of [Handling XML](https://www.deepl.com/docs-api/handling-xml/) in the translation endpoint (outline_detection, splitting_tags, non_splitting_tags, ignore_tags).
 
 ## See Also
 

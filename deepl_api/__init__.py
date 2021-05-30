@@ -171,6 +171,7 @@ class DeepL:
         split_sentences: SplitSentences = None,
         preserve_formatting: bool = None,
         formality: Formality = None,
+        handle_xml: bool = None,
         texts: list,
     ) -> list:
         """
@@ -208,6 +209,9 @@ class DeepL:
 
         if formality != None:
             payload["formality"] = formality.value
+        
+        if handle_xml:
+            payload["tag_handling"] = "xml"
 
         data = self._api_call("/translate", payload)
 

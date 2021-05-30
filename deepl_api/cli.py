@@ -66,6 +66,7 @@ def languages():
 @click.option("-p", "--preserve-formatting", default=None, is_flag=True)
 @click.option("-m", "--formality-more", default=None, is_flag=True)
 @click.option("-l", "--formality-less", default=None, is_flag=True)
+@click.option("-x", "--handle-xml", default=None, is_flag=True)
 def translate(
     source_language,
     target_language,
@@ -74,6 +75,7 @@ def translate(
     preserve_formatting,
     formality_more,
     formality_less,
+    handle_xml
 ):
     try:
         deepl = _get_instance()
@@ -94,6 +96,7 @@ def translate(
             target_language=target_language,
             preserve_formatting=preserve_formatting,
             formality=formality,
+            handle_xml=handle_xml,
             texts=[text],
         )
 

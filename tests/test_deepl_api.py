@@ -102,6 +102,33 @@ def test_translate():
                 },
             ],
         },
+        {
+            "args": {
+                "source_language": "EN",
+                "target_language": "FR",
+                "handle_xml": True,
+                "texts": ["A delicious <i>apple</i>."],
+            },
+            "result": [
+                {
+                    "detected_source_language": "EN",
+                    "text": "Une <i>pomme</i> délicieuse.",
+                },
+            ],
+        },
+        {
+            "args": {
+                "source_language": "EN",
+                "target_language": "FR",
+                "texts": ["A delicious <i>apple</i>."],
+            },
+            "result": [
+                {
+                    "detected_source_language": "EN",
+                    "text": "Une délicieuse <i>pomme</i>.",
+                },
+            ],
+        },
     ]
 
     for test in tests:
