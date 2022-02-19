@@ -1,5 +1,6 @@
-# UNRELEASED
+# 2022-02-19 v0.2.3
 - Added support for basic XML handling in DeepL, thanks to [Nick Haffie-Emslie](https://github.com/ontl)!
+- Updated dependency on click package to allow for new major v8.
 
 # 2021-05-23 v0.2.2
 - Added support for the DeepL free tier which requires a different API endpoint, which will be automatically selected based on the provided API key.
