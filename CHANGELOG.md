@@ -1,3 +1,6 @@
+# 2022-02-21 v0.2.4
+- Updated dependencies to improve support of Python 3.10.
+
 # 2022-02-19 v0.2.3
 - Added support for basic XML handling in DeepL, thanks to [Nick Haffie-Emslie](https://github.com/ontl)!
 - Updated dependency on click package to allow for new major v8.
